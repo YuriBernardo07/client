@@ -18,6 +18,8 @@ public class Client {
     private LocalDate birthDate;
     private Integer children;
 
+    
+
     public Client(){
 
     }
@@ -91,4 +93,6 @@ public class Client {
     public int hashCode() {
         return Objects.hash(id, name, cpf, income, birthDate, children);
     }
+
+
 }
