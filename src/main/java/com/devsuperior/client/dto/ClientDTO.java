@@ -1,6 +1,7 @@
 package com.devsuperior.client.dto;
 
 import com.devsuperior.client.entities.Client;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -8,8 +9,11 @@ import java.util.Optional;
 public class ClientDTO {
 
     private Long id;
+    @Size(min = 3 , max = 80 , message = "o campo deve ter entre 3 e 80 caracteres")
+    @NotBlank(message = "campo requerido")
     private String name;
     private String cpf;
+    @Positive(message = "O valor da renda não pode ser negativo")
     private Double income;
     private LocalDate birthDate;
     private Integer children;
